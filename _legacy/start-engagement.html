@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Start an Engagement — Taskive Technologies</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div id="scroll-progress"></div>
+
+<header class="site-header">
+  <div class="utility-bar">
+    <div class="wrap">
+      <span>Software consulting and product engineering for business-critical systems</span>
+      <a href="work/index.html">View our work →</a>
+    </div>
+  </div>
+  <div class="wrap">
+    <nav class="main-nav">
+      <a href="index.html" class="logo">
+        <svg viewBox="0 0 24 24"><path d="M2 12h5l2-7 4 14 2-7h7" fill="none" stroke="#1F3FE0" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Taskive
+      </a>
+      <div class="nav-links">
+        <a href="index.html#services">Services</a>
+        <a href="work/index.html">Case studies</a>
+        <a href="index.html#industries">Industries</a>
+        <a href="index.html#process">How We Work</a>
+        <a href="index.html#about">About</a>
+      </div>
+      <a href="start-engagement.html" class="btn btn-primary nav-cta">Start an Engagement</a>
+    </nav>
+  </div>
+</header>
+
+<div class="breadcrumb">
+  <div class="wrap">
+    <a href="index.html">Home</a><span class="sep">/</span><span class="current">Start an Engagement</span>
+  </div>
+</div>
+
+<section style="padding-bottom:20px;">
+  <div class="wrap">
+    <div class="eyebrow reveal"><span class="dot"></span>START AN ENGAGEMENT</div>
+    <h1 class="reveal" style="font-size:clamp(34px,5vw,54px); margin:18px 0 16px; max-width:760px;">Tell us what problem you need solved.</h1>
+    <p class="reveal" style="color:var(--slate); font-size:17.5px; max-width:600px; font-weight:500;">The right engagement depends on the system, the workflow, and the outcome you need. Share the details and we’ll tell you honestly if Taskive is the right fit, usually within one business day.</p>
+  </div>
+</section>
+
+<section style="padding-top:24px;">
+  <div class="wrap form-grid">
+    <div class="reveal">
+      <form id="engagement-form">
+        <div class="field-row">
+          <div class="field">
+            <label>Full name</label>
+            <input type="text" id="fullName" name="fullName" placeholder="Jordan Lee" required>
+          </div>
+          <div class="field">
+            <label>Work email</label>
+            <input type="email" id="email" name="email" placeholder="jordan@company.com" required>
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label>Company name</label>
+            <input type="text" id="companyName" name="companyName" placeholder="Company Inc." required>
+          </div>
+          <div class="field">
+            <label>Company size</label>
+            <select id="companySize" name="companySize" required>
+              <option value="">Select one</option>
+              <option>1–10 employees</option>
+              <option>11–50 employees</option>
+              <option>51–200 employees</option>
+              <option>201–1,000 employees</option>
+              <option>1,000+ employees</option>
+            </select>
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label>Project type</label>
+            <select id="projectType" name="projectType" required>
+              <option value="">Select one</option>
+              <option>New platform or product build</option>
+              <option>Platform modernisation</option>
+              <option>Operational automation</option>
+              <option>Systems integration</option>
+              <option>Fractional technical leadership</option>
+              <option>Not sure yet</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Timeline</label>
+            <select id="timeline" name="timeline" required>
+              <option value="">Select one</option>
+              <option>ASAP / urgent</option>
+              <option>Within 1 month</option>
+              <option>1–3 months</option>
+              <option>3+ months out</option>
+              <option>Just exploring</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label>Estimated budget range (optional)</label>
+          <select id="budget" name="budget">
+            <option value="">Prefer not to say yet</option>
+            <option>$15,000 – $50,000</option>
+            <option>$50,000 – $150,000</option>
+            <option>$150,000 – $400,000</option>
+            <option>$400,000+</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>What are you building, and what's at stake?</label>
+          <textarea id="description" name="description" rows="6" placeholder="Tell us about the business problem, the workflow, and what needs to be true for this to work." required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit-btn">Send to Taskive →</button>
+        <div id="error-msg" style="display:none; margin-top:16px; color:var(--signal); font-size:14px; padding:12px; background-color:#FEF2F2; border:1px solid #FECACA; border-radius:6px;"></div>
+        <p class="success-msg mono" style="display:none; margin-top:16px; color:var(--signal); font-size:13.5px;">✓ Thank you! We have received your engagement request and will be in touch within 1-2 business days.</p>
+      </form>
+
+      <!-- Supabase URL configuration -->
+      <script>
+        // Use the env var locally or configure for production domain
+        const supabaseUrl = 'http://127.0.0.1:54321'; 
+
+        document.getElementById('engagement-form').addEventListener('submit', async function(event) {
+          event.preventDefault();
+          const btn = document.getElementById('submit-btn');
+          const errorMsg = document.getElementById('error-msg');
+          const successMsg = document.querySelector('.success-msg');
+
+          // Collect form data
+          const formData = {
+            fullName: document.getElementById('fullName').value,
+            email: document.getElementById('email').value,
+            companyName: document.getElementById('companyName').value,
+            companySize: document.getElementById('companySize').value,
+            projectType: document.getElementById('projectType').value,
+            timeline: document.getElementById('timeline').value,
+            budget: document.getElementById('budget').value,
+            description: document.getElementById('description').value
+          };
+
+          // UI Loading state
+          btn.textContent = 'Sending...';
+          btn.disabled = true;
+          errorMsg.style.display = 'none';
+
+          try {
+            const response = await fetch(`${supabaseUrl}/functions/v1/start-engagement-email`, {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                // For a real production app, you might want to attach your anon key here if required by cors or edge fn setup
+              },
+              body: JSON.stringify(formData)
+            });
+
+            if (!response.ok) {
+              const resData = await response.json();
+              throw new Error(resData.error || 'Failed to submit the form');
+            }
+
+            // Success state
+            btn.style.display = 'none';
+            successMsg.style.display = 'block';
+            this.reset();
+          } catch (error) {
+            console.error('Submission error:', error);
+            errorMsg.textContent = 'There was an error submitting your request. Please try again.';
+            errorMsg.style.display = 'block';
+            btn.textContent = 'Send to Taskive →';
+            btn.disabled = false;
+          }
+        });
+      </script>
+    </div>
+
+    <div class="reveal">
+      <div class="side-card">
+        <h4>How engagements begin</h4>
+        <div class="step-mini">
+          <span class="num">01</span>
+          <p><strong>We review, usually within 24 hours.</strong>A senior person reads every submission personally.</p>
+        </div>
+        <div class="step-mini">
+          <span class="num">02</span>
+          <p><strong>A short intro call.</strong>30 minutes to understand scope, constraints, and fit.</p>
+        </div>
+        <div class="step-mini">
+          <span class="num">03</span>
+          <p><strong>A scoping proposal.</strong>Timeline, team, and investment, specific to your engagement.</p>
+        </div>
+      </div>
+
+      <div class="side-card">
+        <h4>Direct contact</h4>
+        <p style="color:var(--slate); font-size:14px; margin-bottom:10px;">Prefer email? Reach us directly:</p>
+        <a href="mailto:info@taskivetech.tech" class="btn btn-ghost btn-block">info@taskivetech.tech</a>
+      </div>
+
+      <div class="side-card" style="margin-bottom:0;">
+        <h4>Common questions</h4>
+        <details class="faq-item" open>
+          <summary>How fast do you actually respond?</summary>
+          <p>Within one business day for the initial review, every time — not just for large budgets.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Do you sign NDAs?</summary>
+          <p>Yes — routinely, including for the confidential engagement currently on our Work page.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Do you work with earlier-stage companies too?</summary>
+          <p>Our focus is mid-size and enterprise engagements, but we’ll always tell you honestly if we’re the right fit.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Is there a minimum engagement size?</summary>
+          <p>There's no public number — it depends on scope and complexity, which is exactly why we start with a conversation, not a price list.</p>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="logo" style="margin-bottom:14px;">
+          <svg viewBox="0 0 24 24" width="20" height="20"><path d="M2 12h5l2-7 4 14 2-7h7" fill="none" stroke="#1F3FE0" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Taskive
+        </div>
+        <p style="color:var(--slate); font-size:14px; max-width:260px;">A software consulting and product engineering partner for businesses with operationally complex systems.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <a href="index.html#services">Product Strategy</a>
+        <a href="index.html#services">Custom Engineering</a>
+        <a href="index.html#services">Modernization</a>
+        <a href="index.html#services">AI &amp; Automation</a>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <a href="work/index.html">Portfolio</a>
+        <a href="index.html#process">How We Work</a>
+        <a href="index.html#about">About</a>
+      </div>
+      <div class="footer-col">
+        <h5>Get in touch</h5>
+        <p style="color:var(--slate); font-size:14px; margin-bottom:12px;">
+          <strong style="color:var(--ink);">Lagos</strong><br>
+          44, Commercial Avenue, Sabo, Yaba, Lagos, Nigeria<br>
+          <a href="tel:+2348165097555">+234 816 509 7555</a>
+        </p>
+        <p style="color:var(--slate); font-size:14px; margin-bottom:12px;">
+          <strong style="color:var(--ink);">Winnipeg</strong><br>
+          167, Lombard Ave, Winnipeg, Canada<br>
+          <a href="tel:+13682107661">+1 368 210 7661</a>
+        </p>
+        <a href="mailto:info@taskivetech.tech">info@taskivetech.tech</a>
+        <div style="margin-top:12px; display:flex; flex-wrap:wrap; gap:12px;">
+          <a href="#" aria-label="LinkedIn">LinkedIn</a>
+          <a href="#" aria-label="Instagram">Instagram</a>
+          <a href="#" aria-label="Twitter">Twitter</a>
+          <a href="#" aria-label="Facebook">Facebook</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Taskive Technologies. All rights reserved.</span>
+      <span>Start an Engagement — Rebrand v2</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/script.js"></script>
+</body>
+</html>
