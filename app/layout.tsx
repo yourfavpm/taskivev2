@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Script from "next/script";
+import SiteHeader from "./components/SiteHeader";
 import "./globals.css";
+import "../public/style.css";
 
 export const metadata: Metadata = {
   title: "Taskive Technologies — Software consulting and product engineering",
@@ -17,32 +19,9 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
-        <link rel="stylesheet" href="/style.css" />
       </head>
       <body suppressHydrationWarning>
-        <header className="site-header">
-          <div className="utility-bar">
-            <div className="wrap">
-              <span>Software consulting and product engineering for business-critical systems</span>
-              <a href="/case-studies">View our case studies →</a>
-            </div>
-          </div>
-          <div className="wrap">
-            <nav className="main-nav">
-              <a href="/" className="logo">
-                <img src="/img/taskivelogo.png" alt="Taskive" style={{ width: "140px", height: "auto", display: "block" }} />
-              </a>
-              <div className="nav-links">
-                <a href="/#services" data-section="true">Services</a>
-                <a href="/case-studies">Case studies</a>
-                <a href="/#industries" data-section="true">Industries</a>
-                <a href="/#process" data-section="true">How We Work</a>
-                <a href="/#about" data-section="true">About</a>
-              </div>
-              <a href="/start-engagement" className="btn btn-primary nav-cta">Start an Engagement</a>
-            </nav>
-          </div>
-        </header>
+        <SiteHeader />
         
         {children}
 
