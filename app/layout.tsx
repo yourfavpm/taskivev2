@@ -70,7 +70,6 @@ export default function RootLayout({
             </div>
             <div className="footer-bottom">
               <span>© 2026 Taskive Technologies. All rights reserved.</span>
-              <span>Homepage prototype — Rebrand v2</span>
             </div>
           </div>
         </footer>

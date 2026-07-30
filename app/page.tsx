@@ -1,3 +1,5 @@
+import TestimonialCarousel from "./components/TestimonialCarousel";
+
 export default function Home() {
   return (
     <>
@@ -17,7 +19,6 @@ export default function Home() {
         <div className="wrap" style={{ display: "grid", gridTemplateColumns: "1fr", gap: "48px", alignItems: "center" }}>
           <div style={{ display: "grid", gridTemplateColumns: "1fr", gap: "0" }} className="hero-grid-outer">
             <div>
-              <div className="eyebrow"><span className="dot"></span>SOFTWARE CONSULTING AND PRODUCT ENGINEERING</div>
               <h1 style={{ fontSize: "clamp(38px,5.6vw,68px)", lineHeight: 1.02, margin: "20px 0 22px", maxWidth: "720px", fontWeight: 700 }}>
                 Technical leadership for systems that have to work.
               </h1>
@@ -328,34 +329,7 @@ export default function Home() {
             <p>Representative client feedback from live engagements.</p>
           </div>
           <div className="testimonial-wrap reveal">
-            <div className="testimonial">
-              <div className="t-slide active">
-                <p className="quote">"Skeduley needed to feel as premium as the businesses using it to run their whole client experience. Taskive built it like it mattered."</p>
-                <div className="who">DRAFT — SKEDULEY ENGAGEMENT, PENDING CLIENT APPROVAL</div>
-              </div>
-              <div className="t-slide">
-                <p className="quote">"We needed a talent platform that felt enterprise-grade from day one. Taskive delivered something we could put in front of serious clients immediately."</p>
-                <div className="who">DRAFT — OPSLY HR ENGAGEMENT, PENDING CLIENT APPROVAL</div>
-              </div>
-              <div className="t-slide">
-                <p className="quote">"Coordinating a student portal across dozens of university partners and multiple countries is not simple. Taskive made the complexity invisible to our students."</p>
-                <div className="who">DRAFT — EDUPLAN360 ENGAGEMENT, PENDING CLIENT APPROVAL</div>
-              </div>
-              <div className="t-slide">
-                <p className="quote">"They didn't just build what we asked for — they pushed back on scope that would have slowed our launch, and they were right to."</p>
-                <div className="who">DRAFT — KEMUKO ENGAGEMENT, PENDING CLIENT APPROVAL</div>
-              </div>
-              <div className="t-controls">
-                <div className="t-dots">
-                  <button className="active"></button><button></button><button></button><button></button>
-                </div>
-                <div className="t-arrows">
-                  <button className="t-prev">←</button>
-                  <button className="t-next">→</button>
-                </div>
-              </div>
-              <span className="placeholder-tag">4 draft quotes shown — replace with real, approved client testimonials before launch</span>
-            </div>
+            <TestimonialCarousel />
           </div>
         </div>
       </section>
