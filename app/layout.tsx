@@ -36,10 +36,10 @@ export default function RootLayout({
               </div>
               <div className="footer-col">
                 <h5>Services</h5>
-                <a href="/#services">Product Strategy</a>
-                <a href="/#services">Custom Engineering</a>
-                <a href="/#services">Modernization</a>
-                <a href="/#services">AI &amp; Automation</a>
+                <a href="/services#strategy">Product Strategy</a>
+                <a href="/services#engineering">Custom Engineering</a>
+                <a href="/services#modernization">Modernization</a>
+                <a href="/services#ai-automation">AI &amp; Automation</a>
               </div>
               <div className="footer-col">
                 <h5>Company</h5>
