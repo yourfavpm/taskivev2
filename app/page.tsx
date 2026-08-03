@@ -1,4 +1,5 @@
 import TestimonialCarousel from "./components/TestimonialCarousel";
+import AnimatedStats from "./components/AnimatedStats";
 
 export default function Home() {
   return (
@@ -98,14 +99,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="proof tight reveal">
-        <div className="wrap proof-grid">
-          <div><div className="stat-num">5+</div><div className="stat-label">Flagship platforms shipped &amp; in production</div></div>
-          <div><div className="stat-num">1,200+</div><div className="stat-label">End users served through EduPlan360 alone</div></div>
-          <div><div className="stat-num">95%</div><div className="stat-label">Visa success rate on an engineered EduPlan360 workflow</div></div>
-          <div><div className="stat-num">4</div><div className="stat-label">Industries: HR, EdTech, vertical SaaS, consumer</div></div>
-        </div>
-      </section>
+      <AnimatedStats />
 
       <section id="services">
         <div className="wrap">
