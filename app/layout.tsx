@@ -41,12 +41,16 @@ export default function RootLayout({
                 <a href="/services#engineering">Custom Engineering</a>
                 <a href="/services#modernization">Modernization</a>
                 <a href="/services#ai-automation">AI &amp; Automation</a>
+                <a href="/services#outsourced-team">Outsourced Teams</a>
               </div>
               <div className="footer-col">
                 <h5>Company</h5>
                 <a href="/case-studies">Portfolio</a>
                 <a href="/#process">How We Work</a>
                 <a href="/#about">About</a>
+                <a href="/privacy-policy">Privacy Policy</a>
+                <a href="/terms-of-service">Terms of Service</a>
+                <a href="/cookie-policy">Cookie Policy</a>
               </div>
               <div className="footer-col">
                 <h5>Get in touch</h5>
@@ -71,6 +75,11 @@ export default function RootLayout({
             </div>
             <div className="footer-bottom">
               <span>© 2026 Taskive Technologies. All rights reserved.</span>
+              <span style={{ display: "flex", gap: "16px", flexWrap: "wrap" }}>
+                <a href="/privacy-policy" style={{ color: "var(--slate-soft)" }}>Privacy Policy</a>
+                <a href="/terms-of-service" style={{ color: "var(--slate-soft)" }}>Terms of Service</a>
+                <a href="/cookie-policy" style={{ color: "var(--slate-soft)" }}>Cookie Policy</a>
+              </span>
             </div>
           </div>
         </footer>

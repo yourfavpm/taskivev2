@@ -146,17 +146,17 @@ section.tight{ padding:56px 0; }
   transition:border-color .2s ease, transform .2s ease;
 }
 .icon svg{ width:20px; height:20px; }
-.icon svg path, .icon svg circle, .icon svg rect, .icon svg polyline, .icon svg line{
+.icon svg path, .icon svg circle, .icon svg rect, .icon svg polyline, .icon svg line, .icon svg polygon{
   stroke:var(--ink); fill:none; stroke-width:1.6; stroke-linecap:round; stroke-linejoin:round;
-  stroke-dasharray:60; stroke-dashoffset:60;
+  stroke-dasharray:200; stroke-dashoffset:200;
   transition:stroke .2s ease;
 }
-.icon.drawn svg path, .icon.drawn svg circle, .icon.drawn svg rect, .icon.drawn svg polyline, .icon.drawn svg line{
+.icon.drawn svg path, .icon.drawn svg circle, .icon.drawn svg rect, .icon.drawn svg polyline, .icon.drawn svg line, .icon.drawn svg polygon{
   animation:draw-icon 1s ease forwards;
 }
 @keyframes draw-icon{ to{ stroke-dashoffset:0; } }
 *:hover > .icon, .icon:hover{ border-color:var(--signal); }
-*:hover > .icon svg path, *:hover > .icon svg circle, *:hover > .icon svg rect, *:hover > .icon svg polyline{ stroke:var(--signal); }
+*:hover > .icon svg path, *:hover > .icon svg circle, *:hover > .icon svg rect, *:hover > .icon svg polyline, *:hover > .icon svg polygon{ stroke:var(--signal); }
 
 /* ---------------- reveal ---------------- */
 .reveal{ opacity:0; transform:translateY(16px); transition:opacity .6s ease, transform .6s ease; }
@@ -706,3 +706,10 @@ footer{ border-top:1px solid var(--line); padding:52px 0 32px; }
 @media (max-width:460px){ .tsk .checkbox-grid{ grid-template-columns:1fr; } }
 .tsk .checkbox-item{ display:flex; align-items:center; gap:8px; font-size:13.5px; color:var(--ink); }
 .tsk .checkbox-item input{ width:16px; height:16px; accent-color:var(--signal); }
+
+/* ---------------- cookie table ---------------- */
+.cookie-table{ width:100%; border-collapse:collapse; margin:20px 0 30px; font-size:14px; }
+.cookie-table th{ text-align:left; font-family:'IBM Plex Mono', monospace; font-size:11px; text-transform:uppercase; letter-spacing:.05em; color:var(--slate-soft); padding:10px 14px; border-bottom:2px solid var(--line-strong); }
+.cookie-table td{ padding:12px 14px; border-bottom:1px solid var(--line); color:var(--slate); vertical-align:top; }
+.cookie-table td:first-child{ color:var(--ink); font-weight:600; font-family:'IBM Plex Mono', monospace; font-size:13px; }
+.cookie-table tr:last-child td{ border-bottom:none; }
