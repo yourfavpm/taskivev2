@@ -36,11 +36,11 @@ export default function SiteHeader() {
               <img src="/img/taskivelogo.png" alt="Taskive" style={{ width: "140px", height: "auto", display: "block" }} />
             </a>
             <div className="nav-links desktop-only">
-              <a href="/services" data-section="true">Services</a>
-              <a href="/case-studies">Case studies</a>
-              <a href="/#industries" data-section="true">Industries</a>
-              <a href="/#process" data-section="true">How We Work</a>
               <a href="/#about" data-section="true">About</a>
+              <a href="/#process" data-section="true">How We Work</a>
+              <a href="/case-studies">Case studies</a>
+              <a href="/services" data-section="true">Services</a>
+              <a href="/#industries" data-section="true">Industries</a>
             </div>
             <a href="/start-engagement" className="btn btn-primary nav-cta desktop-only">Start an Engagement</a>
             
@@ -69,11 +69,11 @@ export default function SiteHeader() {
           </button>
         </div>
         <div className="mobile-menu-body">
-          <a href="/services" onClick={() => setIsOpen(false)}>Services</a>
-          <a href="/case-studies" onClick={() => setIsOpen(false)}>Case studies</a>
-          <a href="/#industries" onClick={() => setIsOpen(false)}>Industries</a>
-          <a href="/#process" onClick={() => setIsOpen(false)}>How We Work</a>
           <a href="/#about" onClick={() => setIsOpen(false)}>About</a>
+          <a href="/#process" onClick={() => setIsOpen(false)}>How We Work</a>
+          <a href="/case-studies" onClick={() => setIsOpen(false)}>Case studies</a>
+          <a href="/services" onClick={() => setIsOpen(false)}>Services</a>
+          <a href="/#industries" onClick={() => setIsOpen(false)}>Industries</a>
         </div>
         <div className="mobile-menu-footer">
           <a href="/start-engagement" className="btn btn-primary btn-lg btn-block" onClick={() => setIsOpen(false)}>Start an Engagement</a>

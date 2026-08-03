@@ -49,7 +49,11 @@ window.addEventListener('load', () => {
 (function(){
   const navLinks = document.querySelectorAll('.nav-links a[data-section]');
   if(!navLinks.length) return;
-  const sections = Array.from(navLinks).map(l => document.querySelector(l.getAttribute('href')));
+  const sections = Array.from(navLinks).map(l => {
+    const href = l.getAttribute('href');
+    const hash = href.includes('#') ? '#' + href.split('#')[1] : href;
+    try { return document.querySelector(hash); } catch(e) { return null; }
+  });
   window.addEventListener('scroll', () => {
     let current = -1;
     sections.forEach((sec, i) => {
@@ -63,7 +67,11 @@ window.addEventListener('load', () => {
 (function(){
   const tocLinks = document.querySelectorAll('.cs-toc a');
   if(!tocLinks.length) return;
-  const sections = Array.from(tocLinks).map(l => document.querySelector(l.getAttribute('href')));
+  const sections = Array.from(tocLinks).map(l => {
+    const href = l.getAttribute('href');
+    const hash = href.includes('#') ? '#' + href.split('#')[1] : href;
+    try { return document.querySelector(hash); } catch(e) { return null; }
+  });
   window.addEventListener('scroll', () => {
     let current = 0;
     sections.forEach((sec, i) => {

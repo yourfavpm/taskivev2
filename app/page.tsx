@@ -19,15 +19,15 @@ export default function Home() {
       <section id="hero" className="hero-section">
         <div className="wrap hero-wrap">
           <div className="hero-text-content">
-            <h1 style={{ fontSize: "clamp(38px,5.6vw,68px)", lineHeight: 1.02, margin: "20px 0 22px", maxWidth: "720px", fontWeight: 700 }}>
-              Technical leadership for systems that have to work.
+            <h1 style={{ fontSize: "clamp(36px,5.2vw,64px)", lineHeight: 1.04, margin: "16px 0 20px", maxWidth: "700px", fontWeight: 700 }}>
+              The technical team behind your next platform.
             </h1>
-            <p style={{ fontSize: "18.5px", color: "var(--slate)", maxWidth: "560px", marginBottom: "32px", fontWeight: 500 }}>
-              Taskive helps businesses modernise platforms, connect systems, and reduce the operational friction that slows delivery.
+            <p style={{ fontSize: "17.5px", color: "var(--slate)", maxWidth: "580px", marginBottom: "32px", fontWeight: 500, lineHeight: 1.65 }}>
+              Taskive Technologies designs, builds, and owns software for growing and enterprise companies — through a full-scope engagement or a dedicated outsourced product team embedded in your roadmap.
             </p>
             <div style={{ display: "flex", flexWrap: "wrap", gap: "14px" }}>
               <a href="/start-engagement" className="btn btn-primary btn-lg">Start an Engagement</a>
-              <a href="#work" className="btn btn-ghost btn-lg">See systems in production ↓</a>
+              <a href="/services#outsourced-team" className="btn btn-ghost btn-lg">Build an Outsourced Team →</a>
             </div>
           </div>
           <div className="hero-visual reveal">
@@ -242,6 +242,9 @@ export default function Home() {
               <p>Mission-driven organizations scaling global impact through effective platforms.</p>
             </div>
           </div>
+          <div className="reveal" style={{ marginTop: "48px", display: "flex", justifyContent: "center" }}>
+            <a href="/start-engagement" className="btn btn-primary btn-lg">Start an Engagement</a>
+          </div>
         </div>
       </section>
 
@@ -278,6 +281,9 @@ export default function Home() {
               <p>We deploy, monitor, and support the system in production — we don't disappear at handoff.</p>
             </div>
           </div>
+          <div className="reveal" style={{ marginTop: "48px", display: "flex", justifyContent: "center" }}>
+            <a href="/start-engagement" className="btn btn-primary btn-lg">Start an Engagement</a>
+          </div>
         </div>
       </section>
 
@@ -304,6 +310,9 @@ export default function Home() {
               <h4 style={{ fontSize: "20px", marginBottom: "10px" }}>Direct communication</h4>
               <p style={{ color: "var(--slate)", fontSize: "15px" }}>No jargon, no surprises, and no unnecessary ceremony.</p>
             </div>
+          </div>
+          <div className="reveal" style={{ marginTop: "48px", display: "flex", justifyContent: "center" }}>
+            <a href="/start-engagement" className="btn btn-primary btn-lg">Start an Engagement</a>
           </div>
         </div>
       </section>

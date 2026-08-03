@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 import SiteHeader from "./components/SiteHeader";
+import ScrollToTop from "./components/ScrollToTop";
 import "./globals.css";
 import "../public/style.css";
 
@@ -73,6 +74,7 @@ export default function RootLayout({
             </div>
           </div>
         </footer>
+        <ScrollToTop />
         <Script src="/script.js" strategy="lazyOnload" />
       </body>
     </html>
