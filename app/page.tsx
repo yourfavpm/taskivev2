@@ -16,27 +16,20 @@ export default function Home() {
         <a href="#testimonials" data-label="Clients"></a>
       </div>
 
-      <section id="hero" style={{ padding: "64px 0 60px" }}>
-        <div className="wrap" style={{ display: "grid", gridTemplateColumns: "1fr", gap: "48px", alignItems: "center" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr", gap: "0" }} className="hero-grid-outer">
-            <div>
-              <h1 style={{ fontSize: "clamp(38px,5.6vw,68px)", lineHeight: 1.02, margin: "20px 0 22px", maxWidth: "720px", fontWeight: 700 }}>
-                Technical leadership for systems that have to work.
-              </h1>
-              <p style={{ fontSize: "18.5px", color: "var(--slate)", maxWidth: "560px", marginBottom: "32px", fontWeight: 500 }}>
-                Taskive helps businesses modernise platforms, connect systems, and reduce the operational friction that slows delivery.
-              </p>
-              <div style={{ display: "flex", flexWrap: "wrap", gap: "14px" }}>
-                <a href="/start-engagement" className="btn btn-primary btn-lg">Start an Engagement</a>
-                <a href="#work" className="btn btn-ghost btn-lg">See systems in production ↓</a>
-              </div>
+      <section id="hero" className="hero-section">
+        <div className="wrap hero-wrap">
+          <div className="hero-text-content">
+            <h1 style={{ fontSize: "clamp(38px,5.6vw,68px)", lineHeight: 1.02, margin: "20px 0 22px", maxWidth: "720px", fontWeight: 700 }}>
+              Technical leadership for systems that have to work.
+            </h1>
+            <p style={{ fontSize: "18.5px", color: "var(--slate)", maxWidth: "560px", marginBottom: "32px", fontWeight: 500 }}>
+              Taskive helps businesses modernise platforms, connect systems, and reduce the operational friction that slows delivery.
+            </p>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: "14px" }}>
+              <a href="/start-engagement" className="btn btn-primary btn-lg">Start an Engagement</a>
+              <a href="#work" className="btn btn-ghost btn-lg">See systems in production ↓</a>
             </div>
           </div>
-        </div>
-      </section>
-
-      <section style={{ padding: "0 0 76px" }}>
-        <div className="wrap">
           <div className="hero-visual reveal">
             <div className="marquee-col">
               <div className="ui-card"><div className="top"><span></span><span></span><span></span><span className="tag">SKEDULEY</span></div><div className="bar w80" style={{ background: "#DCF3E9" }}></div><div className="bar w60" style={{ background: "#DCF3E9" }}></div><div className="chip" style={{ background: "#DCF3E9", color: "#0E9F6E" }}>Booking confirmed</div></div>
