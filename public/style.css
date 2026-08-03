@@ -656,3 +656,52 @@ footer{ border-top:1px solid var(--line); padding:52px 0 32px; }
     margin-top: -20px;
   }
 }
+
+/* ---------------- services page — detailed list ---------------- */
+.tsk .service-detail-list{ display:flex; flex-direction:column; }
+.tsk .service-detail{
+  display:grid; grid-template-columns:1fr; gap:22px;
+  padding:44px 0; border-bottom:1px solid var(--line);
+}
+@media (min-width:860px){ .tsk .service-detail{ grid-template-columns:64px 1fr; gap:36px; } }
+.tsk .service-detail-icon{ display:flex; flex-direction:row; align-items:center; gap:14px; }
+@media (min-width:860px){ .tsk .service-detail-icon{ flex-direction:column; align-items:flex-start; } }
+.tsk .service-detail-icon .icon{ width:52px; height:52px; border-radius:10px; }
+.tsk .service-detail-icon .icon svg{ width:26px; height:26px; }
+.tsk .service-detail-index{ font-family:'IBM Plex Mono', monospace; color:var(--slate-soft); font-size:13px; }
+.tsk .service-detail h3{ font-size:26px; margin-bottom:12px; }
+.tsk .service-detail > .service-detail-body > p{ color:var(--slate); font-size:16px; max-width:640px; margin-bottom:20px; }
+.tsk .service-detail-list-items{ display:grid; grid-template-columns:1fr; gap:10px 30px; margin-bottom:22px; }
+@media (min-width:640px){ .tsk .service-detail-list-items{ grid-template-columns:1fr 1fr; } }
+.tsk .service-detail-list-items li{ position:relative; padding-left:20px; color:var(--slate); font-size:14.5px; }
+.tsk .service-detail-list-items li::before{ content:'—'; position:absolute; left:0; color:var(--signal); font-weight:700; }
+.tsk .service-cta{ display:inline-flex; align-items:center; gap:6px; font-weight:700; font-size:14.5px; color:var(--signal); }
+.tsk .service-cta:hover{ gap:10px; }
+.tsk .service-cta::after{ content:'→'; transition:transform .2s ease; }
+ 
+/* ---------------- outsourced team — featured section ---------------- */
+.tsk .outsourced-section{
+  background:var(--ink); color:var(--paper); border-radius:8px;
+  padding:60px 48px; position:relative; overflow:hidden;
+}
+@media (max-width:640px){ .tsk .outsourced-section{ padding:36px 24px; } }
+.tsk .outsourced-section::before{
+  content:''; position:absolute; inset:0;
+  background:radial-gradient(circle at 90% 0%, rgba(255,90,54,0.22), transparent 55%);
+  pointer-events:none;
+}
+.tsk .outsourced-grid{ display:grid; grid-template-columns:1fr; gap:48px; position:relative; z-index:1; }
+@media (min-width:960px){ .tsk .outsourced-grid{ grid-template-columns:1fr 1.05fr; } }
+.tsk .outsourced-copy .eyebrow{ color:var(--pulse); }
+.tsk .outsourced-copy h2{ font-size:clamp(28px,3.6vw,40px); margin:16px 0 18px; color:var(--paper); }
+.tsk .outsourced-copy p{ color:#B7BCCB; font-size:16px; margin-bottom:24px; max-width:460px; }
+.tsk .outsourced-list{ margin-bottom:28px; }
+.tsk .outsourced-list li{ position:relative; padding-left:24px; color:#D4D7E2; font-size:15px; margin-bottom:14px; max-width:440px; }
+.tsk .outsourced-list li::before{ content:'✓'; position:absolute; left:0; color:var(--pulse); font-weight:700; }
+.tsk .outsourced-form{ background:var(--paper); border-radius:8px; padding:32px; color:var(--ink); }
+.tsk .outsourced-form h4{ font-size:18px; margin-bottom:6px; }
+.tsk .outsourced-form > p{ color:var(--slate); font-size:13.5px; margin-bottom:22px; }
+.tsk .checkbox-grid{ display:grid; grid-template-columns:1fr 1fr; gap:10px 16px; margin-bottom:6px; }
+@media (max-width:460px){ .tsk .checkbox-grid{ grid-template-columns:1fr; } }
+.tsk .checkbox-item{ display:flex; align-items:center; gap:8px; font-size:13.5px; color:var(--ink); }
+.tsk .checkbox-item input{ width:16px; height:16px; accent-color:var(--signal); }
